@@ -21,7 +21,7 @@ namespace FinalProject {
         {
             if(other.gameObject.GetComponent<BikeController>())
             {
-                _rb.AddRelativeForce(Vector2.up * speed * Time.deltaTime);
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed, ForceMode2D.Impulse);
             }
         }
     }
