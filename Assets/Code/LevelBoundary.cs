@@ -9,7 +9,8 @@ public class LevelBoundary : MonoBehaviour
     {
         if (other.gameObject.name == "Rear Tire" ||
             other.gameObject.name == "Front Tire" ||
-            other.gameObject.name == "Body")
+            other.gameObject.name == "Body" ||
+            other.gameObject.name == "Person")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

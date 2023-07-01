@@ -46,21 +46,16 @@ public class BikeController : MonoBehaviour
             {
                 _rb.AddRelativeForce(Vector2.right * moveSpeed * Time.deltaTime * 10f);
             }
-
-<<<<<<< HEAD
         // Update the bike's position=
         //velocity = new Vector2(bikeVelocity, 0);
         //rb.velocity = velocity;
-
         // Update the bike's rotation
-        rb.transform.localRotation = Quaternion.Euler(0, 0, rotation);
-=======
+        _rb.transform.localRotation = Quaternion.Euler(0, 0, rotationSpeed);
             // Go Backward
             if (Input.GetKey(KeyCode.DownArrow))
             {
                 _rb.AddRelativeForce(Vector2.left * moveSpeed * Time.deltaTime * 10f);
             }
         }
->>>>>>> bdb16aa1d7a556f08710e192b8f5e7a2be988a5f
     }
 }
