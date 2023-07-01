@@ -47,8 +47,8 @@ public class BikeController : MonoBehaviour
 
 
         // Update the bike's position=
-        velocity = new Vector2(bikeVelocity, 0);
-        rb.velocity = velocity;
+        //velocity = new Vector2(bikeVelocity, 0);
+        //rb.velocity = velocity;
 
         // Update the bike's rotation
         rb.transform.localRotation = Quaternion.Euler(0, 0, rotation);
