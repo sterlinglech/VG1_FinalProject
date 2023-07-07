@@ -1,61 +1,60 @@
 using UnityEngine;
 
-public class BikeController : MonoBehaviour
+namespace FinalProject
 {
-    Rigidbody2D _rb;
-
-    public float rotationSpeed;
-    public float moveSpeed;
-
-    bool isGrounded;
-
-    void Start() 
+    public class BikeController : MonoBehaviour
     {
-        _rb = GetComponent<Rigidbody2D>();
-    }
+        Rigidbody2D _rb;
 
-    public void CollisionDetected(RearTireController rearTire)
-    {
-        isGrounded = true;
-    }
+        public float rotationSpeed;
+        public float moveSpeed;
 
-    public void CollisionExited(RearTireController rearTire)
-    {
-        isGrounded = false;
-    }
+        bool isGrounded;
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Rotate Left
-        if (Input.GetKey(KeyCode.LeftArrow))
+        void Start()
         {
-            _rb.AddTorque(rotationSpeed * Time.deltaTime * 10f);
+            _rb = GetComponent<Rigidbody2D>();
         }
 
-        // Rotate Right
-        if (Input.GetKey(KeyCode.RightArrow))
+        public void CollisionDetected(RearTireController rearTire)
         {
-            _rb.AddTorque(-rotationSpeed * Time.deltaTime * 10f);
+            isGrounded = true;
         }
 
-        if (isGrounded)
+        public void CollisionExited(RearTireController rearTire)
         {
-            // Go Forward
+            isGrounded = false;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            // Rotate Left
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                _rb.AddRelativeForce(Vector2.right * moveSpeed * Time.deltaTime * 10f);
+                _rb.AddTorque(rotationSpeed * Time.deltaTime * 10f);
             }
-        // Update the bike's position=
-        //velocity = new Vector2(bikeVelocity, 0);
-        //rb.velocity = velocity;
-        // Update the bike's rotation
-        _rb.transform.localRotation = Quaternion.Euler(0, 0, rotationSpeed);
-            // Go Backward
+
+            // Rotate Right
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                _rb.AddRelativeForce(Vector2.left * moveSpeed * Time.deltaTime * 10f);
+                _rb.AddTorque(-rotationSpeed * Time.deltaTime * 10f);
+            }
+
+            if (isGrounded)
+            {
+                // Go Forward
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    _rb.AddRelativeForce(Vector2.right * moveSpeed * Time.deltaTime * 10f);
+                }
+                // Go Backward
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    _rb.AddRelativeForce(Vector2.left * moveSpeed * Time.deltaTime * 10f);
+                }
             }
         }
     }
 }
+
