@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,9 +7,6 @@ namespace FinalProject
 {
     public class ResetSceneOnCollision : MonoBehaviour
     {
-        // Outlets
-        public TMP_Text lost_message_out_of_bounds;
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.name == "Rear Tire" ||
@@ -18,15 +14,16 @@ namespace FinalProject
                 other.gameObject.name == "Body" ||
                 other.gameObject.name == "Person")
             {
-                StartCoroutine(Routine_Lose_out_of_bounds());
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
-
-        public IEnumerator Routine_Lose_out_of_bounds()
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            lost_message_out_of_bounds.text = "You fell into the void below!";
-            yield return new WaitForSeconds(2.4f); //You may change this number of seconds
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // Reload scene iff: 'other' collides with player
+            if (other.gameObject.GetComponent<BikeController>())
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 }
