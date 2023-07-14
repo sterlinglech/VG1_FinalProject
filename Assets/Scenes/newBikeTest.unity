@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 990339118}
   - component: {fileID: 990339117}
   - component: {fileID: 990339121}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rear_wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 728ffcbee5d554147887f28133644895, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -325,13 +325,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990339115}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.95, y: -2.72, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.34666666, y: -0.12666671, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1131234492}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!235 &990339121
 WheelJoint2D:
@@ -370,7 +370,8 @@ GameObject:
   - component: {fileID: 1131234491}
   - component: {fileID: 1131234489}
   - component: {fileID: 1131234490}
-  m_Layer: 0
+  - component: {fileID: 1131234493}
+  m_Layer: 7
   m_Name: CBR1000RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,10 +532,28 @@ Transform:
   m_LocalPosition: {x: -7.43, y: -2.53, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2146955320}
+  - {fileID: 990339120}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1131234493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131234488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4610c00a12442049e7ace23648a9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelLeft: {fileID: 990339121}
+  wheelRight: {fileID: 2146955321}
+  speed: 0
+  torque: 0
 --- !u!1001 &1347967975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,7 +632,7 @@ GameObject:
   - component: {fileID: 2146955318}
   - component: {fileID: 2146955317}
   - component: {fileID: 2146955321}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: front_wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +655,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 728ffcbee5d554147887f28133644895, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -741,13 +760,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146955315}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.786, y: -2.752, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.4293334, y: -0.14800009, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1131234492}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!235 &2146955321
 WheelJoint2D:
