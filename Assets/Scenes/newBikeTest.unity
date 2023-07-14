@@ -554,6 +554,7 @@ MonoBehaviour:
   wheelRight: {fileID: 2146955321}
   speed: 0
   torque: 0
+  bikeRotationSpeed: 200
 --- !u!1001 &1347967975
 PrefabInstance:
   m_ObjectHideFlags: 0
